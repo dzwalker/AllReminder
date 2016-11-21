@@ -1,0 +1,2 @@
+ALTER TABLE Reminders ADD COLUMN createdAt INTEGER;
+ALTER TABLE Reminders ADD COLUMN lastModifyAt INTEGER;

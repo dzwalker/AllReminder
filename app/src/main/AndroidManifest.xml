@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.david.allreminder" >
+
+    <!-- 连接网络权限，用于执行云端语音能力 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 读取网络信息状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取当前wifi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 读取手机信息权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读取联系人权限，上传联系人需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 弹出窗口的权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 指定添加安装快捷方式的权限 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!-- 监控网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- <uses-permission android:name="android.permission.BIND_REMOTEVIEWS" /> -->
+    <application
+        android:name="com.activeandroid.app.Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+        <meta-data
+            android:name="AR_DB_NAME"
+            android:value="ar.db" />
+        <meta-data
+            android:name="AR_DB_VERSION"
+            android:value="3" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.example.david.allreminder.model.Reminder, com.example.david.allreminder.model.ReminderLog,com.example.david.allreminder.model.CmdRecord" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CreateReminderActivity"
+            android:label="@string/title_activity_create_reminder" >
+            <intent-filter>
+                <action android:name="com.example.david.allreminder.intent.action.CreateReminderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".ReminderService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
+            android:name=".temp.ListRemindersActivity"
+            android:label="@string/title_activity_list_reminders" >
+            <intent-filter>
+                <action android:name="com.example.david.allreminder.intent.action.ListRemindersActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".demo.IatDemo"
+            android:label="IatDemo" >
+        </activity>
+
+        <receiver android:name=".ReminderListWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/reminder_list_widget_info" />
+        </receiver>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".activity.CmdRecordListActivity"
+            android:label="@string/title_activity_cmd_record_list" >
+        </activity>
+        <activity
+            android:name=".activity.TestActivity"
+            android:label="@string/title_activity_test" >
+        </activity>
+        <activity
+            android:name=".activity.VoiceRecognizeDialogActivity"
+            android:label="@string/title_activity_voice_recognize_dialog_activity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.example.david.allreminder.intent.action.VoiceRecognizeDialogActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ReminderDetailDialogActivity"
+            android:label="@string/title_activity_reminder_detail_dialog"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar" >
+            <intent-filter>
+                <action android:name="com.example.david.allreminder.intent.action.ReminderDetailDialogActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CreateTodoActivity"
+            android:label="@string/title_activity_create_todo"
+
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar">
+            <intent-filter>
+                <action android:name="com.example.david.allreminder.intent.action.CreateTodoActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".ReminderWidgetService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" >
+        </service>
+
+    </application>
+
+</manifest>

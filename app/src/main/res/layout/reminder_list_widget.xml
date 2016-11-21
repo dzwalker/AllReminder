@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/widget_title_bg">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="马上行动！"
+            android:id="@+id/tvWidgetTitle"
+            android:layout_weight="1"
+            android:layout_marginRight="30dp"/>
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnCreateTodoWidget"
+            android:layout_weight="1"
+            android:src="@drawable/iconfont_tianjia"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"/>
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnCreateByVoice"
+            android:layout_weight="1"
+            android:src="@drawable/iconfont_yuyin_white"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listViewWidget"
+        android:background="@color/widget_content_bg"/>
+</LinearLayout>

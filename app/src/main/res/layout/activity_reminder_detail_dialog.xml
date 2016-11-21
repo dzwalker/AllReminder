@@ -1,0 +1,346 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                tools:context="com.example.david.allreminder.activity.ReminderDetailDialogActivity"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/title_color"
+        android:padding="5dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="该动手啦！"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center_vertical"/>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/btnCloseDetailDialog"
+            android:src="@drawable/iconfont_guanbi"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/llTitle"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/btnEditTitleAndDetail"
+                android:src="@drawable/iconfont_bianji"
+                android:scaleType="fitCenter"
+                android:background="@color/alpha100"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:text="这里显示的是要做的事情"
+                android:id="@+id/tvReminderTitle"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/btnTimeInfo"
+                android:src="@drawable/iconfont_shijian_small"
+                android:scaleType="fitCenter"
+                android:background="@color/alpha100"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:id="@+id/llDetailAndAction">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/llDetail">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="这是detail的显示"
+                    android:id="@+id/tvDetail"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llReminderAction">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="完成"
+                    android:id="@+id/btnComplete"
+                    android:layout_weight="1"/>
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="开干"
+                    android:id="@+id/btnStartAction"
+                    android:layout_weight="1"/>
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="安排"
+                    android:id="@+id/btnRearrange"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:visibility="visible"
+            android:id="@+id/llStartDoing">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多久后提醒你？"
+                android:id="@+id/textViewRemindInfo"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="15分钟"
+                    android:id="@+id/btnP1"
+                    android:layout_weight="1"/>
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1个番茄"
+                    android:id="@+id/btnP2"
+                    android:layout_weight="1"/>
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1个小时"
+                    android:id="@+id/btnP3"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="自定义"
+                    android:id="@+id/textView7"/>
+
+                <EditText
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/etPMinute"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分钟"
+                    android:id="@+id/textView8"
+                    android:layout_marginRight="30dp"/>
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GO"
+                    android:id="@+id/btnPMore"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/llRearrange">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="安排到什么时候？"
+                android:id="@+id/textView6"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llSelectType">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:id="@+id/rgChooseType">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="准确时间"
+                        android:id="@+id/rbChooseTypeReminder"
+                        android:checked="false"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="某天"
+                        android:id="@+id/rbChooseTypeDay"
+                        android:checked="false"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="某周"
+                        android:id="@+id/rbChooseTypeWeek"
+                        android:checked="false"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="待定"
+                        android:id="@+id/rbChooseTypeAllTime"
+                        android:checked="false"/>
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+                android:id="@+id/llDateAndTime">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:text="&lt;"
+                    android:id="@+id/btnMinusDayDetail"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="选择日期"
+                    android:id="@+id/tvDate"
+                    android:gravity="center"/>
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:text=">"
+                    android:id="@+id/btnPlusDayDetail"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/llSelectTime">
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:text="&lt;"
+                        android:id="@+id/btnMinusTimeDetail"
+                        />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="选择时间"
+                        android:id="@+id/tvTime"
+                        android:gravity="center"/>
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:text=">"
+                        android:id="@+id/btnPlusTimeDetail"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llDoneButton"
+                android:gravity="right">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="就这么着了"
+                    android:id="@+id/btnSaveChange"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

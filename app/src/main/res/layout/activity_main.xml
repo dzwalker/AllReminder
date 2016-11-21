@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+              tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/container"
+    android:weightSum="1"
+              android:background="#00000000"
+              android:alpha="100">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/title_color"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="马上行动！"
+            android:id="@+id/tvPlace"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/btnSettings"
+            android:src="@drawable/setting"
+            android:background="@color/alpha100"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/white"
+        >
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/btnStartActCreateReminder"
+            android:src="@drawable/iconfont_xinjiankecheng"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"
+            android:padding="10dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/btnTestVoice"
+            android:src="@drawable/iconfont_yuyin"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"
+            android:layout_weight="1"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/btnCreateTodo"
+            android:src="@drawable/iconfont_xinjian"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"
+            android:layout_weight="1"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/btnCmdRecord"
+            android:src="@drawable/iconfont_liaotianjilu"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"
+            android:layout_weight="1"
+            android:padding="10dp"/>
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/btnTest"
+            android:src="@drawable/iconfont_producttest"
+            android:scaleType="fitCenter"
+            android:background="@color/alpha100"
+            android:layout_weight="1"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:text="当前数字"
+            android:id="@+id/btnGetCurrentNum"
+            android:layout_below="@+id/btnUnbindService"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:text="解绑服务"
+            android:id="@+id/btnUnbindService"
+            android:layout_below="@+id/btnBindService"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:text="绑定服务"
+            android:id="@+id/btnBindService"
+            android:layout_below="@+id/btnCloseService"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:text="关闭服务"
+            android:id="@+id/btnCloseService"
+            android:layout_below="@+id/btnStartService"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:text="启动服务"
+            android:id="@+id/btnStartService"
+            android:layout_below="@+id/tvOut"
+            android:layout_alignParentStart="true"
+            />
+    </LinearLayout>
+
+    <!--<ListView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:id="@+id/reminderList"/>-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="今天"
+            android:id="@+id/tvTabToday"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="@color/tab_selected"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="这周"
+            android:id="@+id/tvTabThisWeek"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="@color/tab_normal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="这周以后"
+            android:id="@+id/tvTabAfterThisWeek"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="@color/tab_normal"/>
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1.0"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation"
+        android:background="@color/white"/>
+
+</LinearLayout>

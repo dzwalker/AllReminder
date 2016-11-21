@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- 画面背景色 -->
+    <drawable name="layout_backgroud">#000000</drawable>
+    
+    <!-- 分割线背景色 -->
+    <drawable name="line_background">#161823</drawable>
+
+    <color name="white">#FFFFFF</color>
+    <color name="alpha100">#00000000</color>
+    
+    <!-- 控件按下时显示的颜色 -->
+    <color name="list_background_color">#2fb3cb</color>
+    <color name="title_color">#f5f6f3</color>
+    <color name="content_color">#737373</color>
+
+    <color name="tab_selected">#44a2ff</color>
+    <color name="tab_normal">#3e3e3e</color>
+
+
+    <color name="widget_title_bg">#96000000</color>
+    <color name="widget_content_bg">#4c000000</color>
+
+
+    <color name="due_time_text">#ff8787</color>
+    <color name="normal_time_text">#dddddd</color>
+
+
+
+</resources>

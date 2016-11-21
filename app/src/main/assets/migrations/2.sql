@@ -1,0 +1,1 @@
+ALTER TABLE Reminders ADD COLUMN postponeCount INTEGER;
